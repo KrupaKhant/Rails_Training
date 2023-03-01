@@ -1,3 +1,5 @@
+#template file for other users
+
 default: &default
   adapter: <%= ENV['DB_ADAPTER'] %>
   database: <%= ENV['DB_NAME'] %>
