@@ -10,12 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_02_041511) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_05_041136) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "forms", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "email"
+    t.string "username"
+    t.integer "phonenumber"
+    t.integer "zipcode"
+    t.string "password"
+    t.date "planstartdate"
+    t.date "planenddate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "firstname"
+    t.text "surname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["firstname"], name: "index_users_on_firstname"
   end
 
 end

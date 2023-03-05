@@ -1,0 +1,56 @@
+<%= form_with model: form do |form| %>
+  <div>
+    <%= form.label :FirstName %><br>
+    <%= form.text_field :firstname %>
+    <% userdata.errors.full_messages_for(:firstname).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :LastName %><br>
+    <%= form.text_area :lastname %>
+    <% userdata.errors.full_messages_for(:lastname).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :Email %><br>
+    <%= form.text_area :email %>
+  </div>
+
+  <div>
+    <%= form.label :Username %><br>
+    <%= form.text_area :username %>
+  </div>
+
+  <div>
+    <%= form.label :Phonenumber %><br>
+    <%= form.text_area :phonenumber %>
+  </div>
+
+  <div>
+    <%= form.label :Zipcode %><br>
+    <%= form.text_area :zipcode %>
+  </div>
+
+  <div>
+    <%= form.label :Password %><br>
+    <%= form.text_area :password %>
+  </div>
+
+  <div>
+    <%= form.label :Plan_Start_Date %><br>
+    <%= form.text_area :planstartdate %>
+  </div>
+
+  <div>
+    <%= form.label :Plan_End_Date %><br>
+    <%= form.text_area :planenddate %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

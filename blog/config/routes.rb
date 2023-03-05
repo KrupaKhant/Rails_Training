@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'form', to: "form#fillform"
+  get '/form/new', to: "form#new"
+  get '/form/edit', to: "form#new"
   root "articles#index"
   
   resources :articles
