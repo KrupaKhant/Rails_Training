@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_065521) do
     t.string "password"
     t.date "planstartdate"
     t.date "planenddate"
+    t.integer "totaldaysofplan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

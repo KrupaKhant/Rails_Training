@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :password
       t.date :planstartdate
       t.date :planenddate
+      t.integer :totaldaysofplan
 
       t.timestamps
     end

@@ -59,13 +59,21 @@
 
   <div>
     <%= form.label :Plan_Start_Date %><br>
-    <%= form.text_field :planstartdate %>
+    <%= form.date_field :planstartdate %>
   </div>
 
   <div>
     <%= form.label :Plan_End_Date %><br>
-    <%= form.text_field :planenddate %>
+    <%= form.date_field :planenddate %>
     <% @user.errors.full_messages_for(:planenddate).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :Plan_Days %><br>
+    <%= form.number_field :totaldaysofplan %>
+    <% @user.errors.full_messages_for(:totaldaysofplan).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
