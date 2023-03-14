@@ -16,6 +16,10 @@ end
   Item.create(name: Faker::Commerce.product_name, price: Faker::Commerce.price, stock_quantity: rand(0..100), category_id: Category.first.id, status: [true, false].sample)
 end
 
+10.times do 
+  ItemModifier.creare(item_id: Item.all.ids.sample, modifier_id: Modifier.all.ids.sample)
+end
+
 # Create modifiers
 20.times do
   Modifier.create(name: Faker::Commerce.product_name, price: Faker::Commerce.price, stock_quantity: rand(0..100))
