@@ -1,0 +1,22 @@
+<h1 style="text-align: center">Products List</h1>
+
+<p style="text-align: center"><%= link_to '<button type="button">New Product</button>'.html_safe, new_product_path %></p>
+
+<table style="border-collapse: collapse; width: 100%;">
+  
+    <tr style="background-color: #ddd; font-weight: bold;">
+      <th style="padding: 10px; border: 1px solid #ccc;">Name</th>
+      <th style="padding: 10px; border: 1px solid #ccc;">Price</th>
+      <th style="padding: 10px; border: 1px solid #ccc;">Delete</th>
+    </tr>
+  
+ 
+    <% @products.each do |product| %>
+      <tr>
+       <td style="padding: 10px; border: 1px solid #ccc; text-align: center"><%= product.name %></td>
+       <td style="padding: 10px; border: 1px solid #ccc;  text-align: right"><%= number_to_indian_currency(product.price) %></td>
+       <td style="padding:10px; border: 1px solid #ccc;  text-align: center"><%= link_to "Delete", product_path(product), data:  {turbo_method: :delete} %></td>
+      </tr>
+    <% end %>
+ 
+</table>
