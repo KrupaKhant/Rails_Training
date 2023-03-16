@@ -18324,3 +18324,170 @@ Processing by ProductsController#index as TURBO_STREAM
 Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.7ms | Allocations: 9304)
 
 
+Started GET "/" for 127.0.0.1 at 2023-03-15 18:27:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 35641)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.0ms | Allocations: 40072)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-15 18:27:56 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 148.5ms | Allocations: 343254)
+  Rendered layout layouts/application.html.erb (Duration: 151.0ms | Allocations: 345526)
+Completed 200 OK in 165ms (Views: 152.1ms | ActiveRecord: 0.6ms | Allocations: 363369)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-15 18:28:12 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"deep", "password"=>"[FILTERED]", "role"=>"employee"}, "commit"=>"Create Account"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "deep"], ["password_digest", "[FILTERED]"], ["role", "employee"], ["created_at", "2023-03-15 12:58:12.650455"], ["updated_at", "2023-03-15 12:58:12.650455"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (16.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 219ms (ActiveRecord: 17.1ms | Allocations: 3389)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-15 18:28:12 +0530
+Processing by SessionsController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 484)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2669)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3035)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-15 18:28:20 +0530
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"deep", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "deep"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 215ms (ActiveRecord: 0.6ms | Allocations: 2501)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-03-15 18:28:20 +0530
+Processing by ProductsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 27.5ms | Allocations: 21012)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 23470)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.4ms | Allocations: 24821)
+
+
+Started DELETE "/products/82" for 127.0.0.1 at 2023-03-15 18:28:24 +0530
+Processing by ProductsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"82"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:11:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_admin rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 1496)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-15 18:28:24 +0530
+Processing by SessionsController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 488)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2673)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 2991)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-15 18:28:40 +0530
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"deep", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "deep"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 215ms (ActiveRecord: 0.3ms | Allocations: 855)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-03-15 18:28:40 +0530
+Processing by ProductsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 6583)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 8964)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 9318)
+
+
+Started DELETE "/products/82" for 127.0.0.1 at 2023-03-15 18:28:42 +0530
+Processing by ProductsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"82"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:11:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_admin rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 855)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-15 18:28:42 +0530
+Processing by SessionsController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 480)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2664)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 2981)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-15 18:28:54 +0530
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"nency", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "nency"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 213ms (ActiveRecord: 0.4ms | Allocations: 893)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-03-15 18:28:54 +0530
+Processing by ProductsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 6583)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 8946)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 9300)
+
+
+Started DELETE "/products/82" for 127.0.0.1 at 2023-03-15 18:28:58 +0530
+Processing by ProductsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"82"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:11:in `current_user'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:27:in `destroy'
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 82]]
+  ↳ app/controllers/products_controller.rb:27:in `destroy'
+  [1m[36mTRANSACTION (17.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:27:in `destroy'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 31ms (ActiveRecord: 18.4ms | Allocations: 3336)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-03-15 18:28:58 +0530
+Processing by ProductsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 6516)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 8877)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.6ms | Allocations: 9231)
+
+
